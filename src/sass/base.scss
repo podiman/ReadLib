@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
+
+@import './reset';
+@import './mixin';
+@import './variables';
+@import './types';
+
+html {
+    font-size: 10px;
+  }
+
+.root {
+  background-color: var(--color-primary-400);
+}
+
+.welcome_text {
+  font-size: 10rem;
+  color: var(--color-info-400);
+}
