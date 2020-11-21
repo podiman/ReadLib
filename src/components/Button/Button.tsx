@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import './styles.scss';
 
-const Button: React.FC = () => {
+interface Props {
+    text: string;
+    landingPage?: boolean;
+}
+
+const Button: React.FC<Props> = ({text, landingPage}) => {
     return (
         <div>
-            <h1>something</h1>
+            <button className={landingPage ? 'landingPageButton' : 'button'}>{text}</button>
         </div>
     )
 }

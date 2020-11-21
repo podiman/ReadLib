@@ -1,0 +1,26 @@
+@import '../../sass/base.scss';
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: var(--color-primary-400);
+    color: var(--color-gray-200);
+}
+
+.logo {
+    display: inherit;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.5rem 1rem;
+    img {
+        height: 50px;
+        width: 50px;
+        margin-right: 0.5rem;
+    }
+    h1 {
+        color: var(--color-grey-200);
+        font-size: 3rem;
+    }
+}
