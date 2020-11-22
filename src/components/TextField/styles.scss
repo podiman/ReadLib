@@ -1,0 +1,19 @@
+@import '../../sass/base.scss';
+
+.quote {
+    font-size: 6rem;
+    color: var(--color-grey-200);
+}
+
+.quoteAuthor {
+    font-size: 4rem;
+    color: var(--color-default-400);
+    text-align: right;
+}
+
+.normal {
+    font-size: 2rem;
+    color: var(--color-grey-200);
+    margin-top: .5rem;
+    line-height: 2.5rem;
+}

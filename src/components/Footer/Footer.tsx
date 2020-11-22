@@ -13,9 +13,9 @@ const Footer: React.FC = () => {
             </div>
             <div className="contactus">
                 <h1>Connect</h1>
-                <img src={twitter} alt="twitter" />
-                <img src={facebook} alt="facebook" />
-                <img src={instagram} alt="instagram" />
+                <a href="https://twitter.com/torontolibrary"><img src={twitter} alt="twitter" /></a>
+                <a href="https://www.facebook.com/torontopubliclibrary"><img src={facebook} alt="facebook" /></a>
+                <a href="https://www.instagram.com/torontolibrary/"><img src={instagram} alt="instagram" /></a>                
             </div>
         </div>
     );

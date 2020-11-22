@@ -1,12 +1,14 @@
 import React from 'react';
+import './styles.scss';
 
 interface Props {
     text: string;
+    classname: string;
 }
 
-const TextField: React.FC<Props> = ({text}) => {
+const TextField: React.FC<Props> = ({text, classname}) => {
     return (
-        <div>
+        <div className={classname}>
             {text}
         </div>
     )
