@@ -5,15 +5,11 @@
 @import './variables';
 @import './types';
 
-html {
+html, body {
     font-size: 10px;
+    min-height: 100vh;
 }
 
-.root {
-  background-color: var(--color-primary-400);
-}
-
-.welcome_text {
-  font-size: 10rem;
-  color: var(--color-info-400);
+.App {
+  min-height: 100vh;
 }

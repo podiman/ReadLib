@@ -1,0 +1,24 @@
+@import '../sass/base.scss';
+
+.landingPage {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body {
+    background-image: url('../assets/landingPageBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    background-color: rgba(0,0,0,.3); // Tint color
+    background-blend-mode: multiply;
+}
+
+.content {
+    flex: 1;
+  }
+
+.footer {
+    flex-shrink: 0;
+}
