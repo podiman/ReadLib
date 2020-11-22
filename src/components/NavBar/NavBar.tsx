@@ -7,7 +7,9 @@ const NavBar: React.FC = () => {
   return (
     <div className="navigation">
       <div className="logo">
-        <img src={Logo} alt="logo" />
+        <a href="/">
+          <img src={Logo} alt="logo" />
+        </a>        
         <h1>ReadLib</h1>
       </div>
       <Button text="Login" landingPage={true} />

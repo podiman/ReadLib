@@ -10,7 +10,7 @@ import giveRating from "../icons/giveRating.svg";
 const LandingPage: React.FC = () => {
   return (
     <div className="landingPage">
-      <NavBar />
+      {/* <NavBar /> */}
       <div className="content">
         <div className="quote">
           <TextField
@@ -34,9 +34,9 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="footer">
+      {/* <div className="footer">
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 };
