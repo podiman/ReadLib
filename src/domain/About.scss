@@ -1,19 +1,84 @@
 @import '../sass/base.scss';
 
 .aboutPage {
-    
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: var(--color-grey-200);
 }
 
 .content {
     display: flex;
     flex-direction: column;
     flex: 1;
+    justify-content: flex-start;
 }
 
 .footer {
     display: flex;
     flex-shrink: 0;
+}
+
+.aboutReadLib {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.aboutText {
+    width: 70%;
+    align-self: center;
+    p {
+        font-size: 1.5rem;
+        margin-left: 2rem;
+        line-height: 2rem;
+        margin-top: 1rem;
+    }
+}
+
+.aboutImage {
+    padding: 2rem;
+    img {
+        width: 400px;
+        height: auto;
+    }
+}
+
+.social-media-icon {
+    width: 30px;
+    height: auto;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &__Email {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-decoration: none;
+    }
+    &__Image {
+        width: 30px;
+    }
+    &__Linkedin {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-decoration: none;
+    }
+    &__Github {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-decoration: none;
+    }
+    &__Text {
+        display: flex;
+        margin-left: 1rem;
+        font-size: 1.5rem;
+        flex: 1;
+        text-decoration: none;
+    }
 }
