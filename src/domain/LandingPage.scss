@@ -10,21 +10,22 @@
     width: 100%;
     background-color: rgba(0,0,0,.3); // Tint color
     background-blend-mode: multiply;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: space-around;
-    align-items: center;
-    .quote {
+    &-content {
         display: flex;
         flex-direction: column;
-        width: 85%;
-        text-align: justify;
-    }
-  }
+        flex: 1;
+        justify-content: space-around;
+        align-items: center;
+        .quote {
+            display: flex;
+            flex-direction: column;
+            width: 85%;
+            text-align: justify;
+        }
+      }
+}
+
+
 
 .footer {
     flex-shrink: 0;

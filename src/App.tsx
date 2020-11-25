@@ -3,7 +3,7 @@ import LandingPage from "./domain/LandingPage";
 import About from "./domain/About";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import { BrowserRouter, Link, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./sass/base.scss";
 import ScrollTop from "./components/ScrollTop/ScrollTop";
 

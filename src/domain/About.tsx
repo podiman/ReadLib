@@ -3,9 +3,12 @@ import TextField from "../components/TextField/TextField";
 import AboutPic from "../assets/bookpage.jpg";
 import Code from "../assets/code.jpg";
 import Email from "../icons/socialMedia/message.svg";
-import Facebook from "../icons/socialMedia/facebook-circular-logo.svg";
 import Linkedin from "../icons/socialMedia/linkedin.svg";
 import Github from "../icons/socialMedia/github.svg";
+import reactLogo from "../icons/technology/react.svg";
+import reduxLogo from "../icons/technology/redux.svg";
+import scssLogo from "../icons/technology/sass-1.svg";
+import googleDevLogo from "../icons/technology/google-developers.svg";
 import "./About.scss";
 
 const About = () => {
@@ -15,16 +18,39 @@ const About = () => {
         <div className="aboutReadLib">
           <div className="aboutText">
             <TextField text="About ReadLib" classname="heading" />
-            <p>
+            <p className="aboutText-paragraph">
               ReadLib is a fictional organization that provides book lovers a
               online journal book to keep track, rate and review the books they
               read.
             </p>
-            <p>
+            <p className="aboutText-paragraph">
               It also has the functionality to keep a list of books the reader
               want to read in the future providing an online space to keep track
               of them.
             </p>
+            <p className="aboutText-paragraph">This site is built on</p>
+            <div className="aboutText-techStack">
+              <div>
+                <img className="logo" src={reactLogo} alt="React" />
+                <p className="aboutText-techStack__text">React</p>
+              </div>
+              <div>
+                <img className="logo" src={reduxLogo} alt="Redux" />
+                <p className="aboutText-techStack__text">Redux</p>
+              </div>
+              <div>
+                <img className="logo" src={scssLogo} alt="SCSS" />
+                <p className="aboutText-techStack__text">SASS</p>
+              </div>
+              <div>
+                <img
+                  className="logo-google"
+                  src={googleDevLogo}
+                  alt="GoogleDev"
+                />
+                <p className="aboutText-techStack__text">Google Books API</p>
+              </div>
+            </div>
           </div>
           <div className="aboutImage">
             <img src={AboutPic} alt="About page pic" />
@@ -37,12 +63,12 @@ const About = () => {
           <div className="aboutText">
             <TextField text="About the Creator" classname="heading" />
             <TextField text="Mayura Wijeyaratne" classname="heading2" />
-            <p>
+            <p className="aboutText-paragraph">
               Over 10 years of software industry experience working on front-end
               and backend development. Expert in Angular, TypeScript and Java.
               Very good communicator and a collaborator.
             </p>
-            <p>Get in touch</p>
+            <p className="aboutText-paragraph">Get in touch</p>
             <div className="social-media-icon">
               <a
                 className="social-media-icon__Email"
