@@ -35,7 +35,7 @@
 }
 
 .aboutText {
-    width: 70%;
+    width: 60%;
     align-self: center;
     &-paragraph {
         font-size: 1.5rem;
@@ -57,9 +57,9 @@
 
 .aboutImage {
     padding: 2rem;
+    width: 40%;
     img {
-        width: 400px;
-        height: auto;
+        width: 100%;
     }
 }
 
