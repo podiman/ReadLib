@@ -51,6 +51,28 @@ const About = () => {
                 <p className="aboutText-techStack__text">Google Books API</p>
               </div>
             </div>
+            <div>
+              <p className="aboutText-github">
+                Want to see the code? Check out this project on my Github
+              </p>
+              <div className="social-media-icon">
+                <a
+                  className="social-media-icon__Github"
+                  href="https://github.com/podiman/ReadLib"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    className="social-media-icon__Image"
+                    src={Github}
+                    alt="https://github.com/podiman/ReadLib"
+                  />
+                  <span className="social-media-icon__Text">
+                    ReadLib
+                  </span>
+                </a>
+              </div>
+            </div>
           </div>
           <div className="aboutImage">
             <img src={AboutPic} alt="About page pic" />
@@ -74,6 +96,7 @@ const About = () => {
                 className="social-media-icon__Email"
                 href="mailto:mayura.wijeya@gmail.com"
                 target="_blank"
+                rel="noreferrer"
               >
                 <img
                   className="social-media-icon__Image"
@@ -90,6 +113,7 @@ const About = () => {
                 className="social-media-icon__Linkedin"
                 href="https://www.linkedin.com/in/mayura-wijeyaratne/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <img
                   className="social-media-icon__Image"
@@ -106,6 +130,7 @@ const About = () => {
                 className="social-media-icon__Github"
                 href="https://github.com/podiman"
                 target="_blank"
+                rel="noreferrer"
               >
                 <img
                   className="social-media-icon__Image"

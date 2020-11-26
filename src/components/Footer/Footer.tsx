@@ -16,13 +16,13 @@ const Footer: React.FC = () => {
       </div>
       <div className="contactus">
         <h1>Connect</h1>
-        <a href="https://twitter.com/torontolibrary" target="_blank">
+        <a href="https://twitter.com/torontolibrary" target="_blank" rel="noreferrer">
           <img src={twitter} alt="twitter" />
         </a>
-        <a href="https://www.facebook.com/torontopubliclibrary" target="_blank">
+        <a href="https://www.facebook.com/torontopubliclibrary" target="_blank" rel="noreferrer">
           <img src={facebook} alt="facebook" />
         </a>
-        <a href="https://www.instagram.com/torontolibrary/" target="_blank">
+        <a href="https://www.instagram.com/torontolibrary/" target="_blank" rel="noreferrer">
           <img src={instagram} alt="instagram" />
         </a>
       </div>
