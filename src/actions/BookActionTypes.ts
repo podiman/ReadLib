@@ -8,6 +8,7 @@ export type BookType = {
     id: string;
     bookInfo: BookInfo;
     ISBNInfo: ISBNInfo[];
+    imgURL?: string;
 }
 
 export type BookInfo = {
