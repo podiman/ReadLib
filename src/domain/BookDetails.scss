@@ -8,44 +8,121 @@
 }
 
 .bookInformation {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    height: inherit;
-    align-self: center;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: inherit;
+  align-self: center;
 }
 
 .bookImage {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  padding: 3rem 2rem 0 2rem;
+  text-align: center;
+  .image {
+    width: 200px;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 4px #8d8d8d;
+  }
+  p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--color-info-400);
+  }
+}
+
+.star {
+  margin: 0 0 0 0.5rem;
+  width: 2rem;
+}
+
+.detailedInfo {
+  padding: 3rem 2rem 0 2rem;
+  .bookTitle {
+    font-size: 3rem;
+    line-height: 4rem;
+    color: var(--color-info-400);
+    font-weight: 600;
+  }
+  .bookSubtitle {
+    font-size: 2rem;
+    line-height: 3rem;
+    color: var(--color-info-400);
+  }
+  .description {
+    font-size: 1.3rem;
+    color: var(--color-default-400);
+    line-height: 1.5rem;
+    padding-top: 2rem;
+    b {
+      font-weight: 700;
+    }
+    i {
+      font-style: italic;
+    }
+  }
+  .avgRating {
     display: flex;
-    flex-direction: column;
-    width: 20%;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0.5rem;
+    p {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin-left: 1rem;
+      color: var(--color-info-400);
+    }
+  }
 }
 
 .authors {
-    display: flex;
-    flex-direction: row;
-    p {
-        &:last-child span{
-            display: none;
-        }
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--color-info-400);
+  p {
+    &:last-child span {
+      display: none;
     }
+  }
 }
 
 .moreInfo {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 2rem 0rem;
+  color: var(--color-info-400);
 }
 
 .publisherInfo {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  p {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    &:last-child span {
+      display: none;
+    }
+  }
+  .ISBN {
     display: flex;
-    flex-direction: column;
-    width: 50%;
+    flex-direction: row;
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
 }
 
 .salesInfo {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  p {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
 }

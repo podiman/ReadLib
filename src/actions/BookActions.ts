@@ -28,8 +28,21 @@ export const GetBooks = (book: string) => async (dispatch: Dispatch<BookActionTy
                     title: getOneBook.data.volumeInfo.title,
                     description: getOneBook.data.volumeInfo.description
                 },
-                ISBNInfo: [getOneBook.data.volumeInfo.industryIdentifiers],
-                imgURL: getOneBook.data.volumeInfo.imageLinks.thumbnail
+                ISBNInfo: getOneBook.data.volumeInfo.industryIdentifiers,
+                imgURL: getOneBook.data.volumeInfo.imageLinks.thumbnail,
+                salesInfo: {
+                    country: getOneBook.data.saleInfo.country,
+                    saleability: getOneBook.data.saleInfo.saleability,
+                    listPrice: {
+                        amount: getOneBook.data.saleInfo.listPrice.amount,
+                        currency: getOneBook.data.saleInfo.listPrice.currencyCode
+                    },
+                    buyLink: getOneBook.data.saleInfo.buyLink,
+                    retailPrice: {
+                        amount: getOneBook.data.saleInfo.retailPrice.amount,
+                        currency: getOneBook.data.saleInfo.retailPrice.currencyCode
+                    },
+                }
             }
         })
     } catch (e) {

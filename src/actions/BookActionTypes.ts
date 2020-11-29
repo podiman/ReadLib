@@ -9,6 +9,7 @@ export type BookType = {
     bookInfo: BookInfo;
     ISBNInfo: ISBNInfo[];
     imgURL?: string;
+    salesInfo: SalesInfo;
 }
 
 export type BookInfo = {
@@ -25,6 +26,19 @@ export type BookInfo = {
 export type ISBNInfo = {
     type: string;
     identifier: string;
+}
+
+type Price = {
+    amount: number;
+    currency: string;
+}
+
+export type SalesInfo = {
+    country: string;
+    saleability: string;
+    listPrice: Price;
+    retailPrice: Price;
+    buyLink: string;
 }
 
 export type CategoryBooks = {
