@@ -1,0 +1,51 @@
+@import "../sass/base.scss";
+
+.bookDetails {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-grey-200);
+}
+
+.bookInformation {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: inherit;
+    align-self: center;
+}
+
+.bookImage {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    justify-content: center;
+}
+
+.authors {
+    display: flex;
+    flex-direction: row;
+    p {
+        &:last-child span{
+            display: none;
+        }
+    }
+}
+
+.moreInfo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.publisherInfo {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.salesInfo {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}

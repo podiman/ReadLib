@@ -25,7 +25,8 @@ export const GetBooks = (book: string) => async (dispatch: Dispatch<BookActionTy
                     publishedDate: getOneBook.data.volumeInfo.publishedDate,
                     publisher: getOneBook.data.volumeInfo.publisher,
                     subtitle: getOneBook.data.volumeInfo.subtitle,
-                    title: getOneBook.data.volumeInfo.title
+                    title: getOneBook.data.volumeInfo.title,
+                    description: getOneBook.data.volumeInfo.description
                 },
                 ISBNInfo: [getOneBook.data.volumeInfo.industryIdentifiers],
                 imgURL: getOneBook.data.volumeInfo.imageLinks.thumbnail

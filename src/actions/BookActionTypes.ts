@@ -13,12 +13,13 @@ export type BookType = {
 
 export type BookInfo = {
     title: string;
-    subtitle: string;
+    subtitle?: string;
     authors: string[];
     publisher: string;
     publishedDate: string;
     pageCount: number;
-    averageRating: number;
+    averageRating?: number;
+    description?: string;
 }
 
 export type ISBNInfo = {
