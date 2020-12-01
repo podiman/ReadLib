@@ -1,12 +1,10 @@
 import React from "react";
 import store from "../Store";
 import "./BookDetails.scss";
-import Rating from "../components/Rating/Rating";
-import { ReactComponent as Star } from "../icons/star.svg";
+import Rating from '@material-ui/lab/Rating';
 
 const BookDetails: React.FC = () => {
   const state = store.getState();
-  console.log(state.books.Books?.bookInfo);
   const imgLink = `https://books.google.com/books/content/images/frontcover/${state.books.Books?.id}?fife=w400-h600`;
   //   const desc: string = state.books.Books?.bookInfo.description!;
   return (
@@ -15,7 +13,7 @@ const BookDetails: React.FC = () => {
         <div className="bookImage">
           <div>
             <img className="image" src={imgLink} alt="bookImage" />
-            <Rating />
+            <Rating name="half-rating" size="large" color="#a78f69" defaultValue={2.5} precision={0.5} />
             <p>My rating</p>
           </div>
         </div>
@@ -36,8 +34,8 @@ const BookDetails: React.FC = () => {
             })}
           </div>
           <div className="avgRating">
-            <Rating />
-            <p>Avarage rating</p>
+          <Rating name="read-only" size="large"  value={state.books.Books?.bookInfo.averageRating} precision={0.5} readOnly />
+          <p>Avarage rating</p>
           </div>
           <div
             className="description"
@@ -53,7 +51,6 @@ const BookDetails: React.FC = () => {
               <div className="ISBN">
                 ISBN:<span>&nbsp;&nbsp;</span>
                 {state.books.Books?.ISBNInfo.map((isbn) => {
-                  console.log(isbn);
                   return (
                     <p>
                       {isbn.identifier}

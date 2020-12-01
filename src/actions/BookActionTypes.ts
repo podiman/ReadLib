@@ -19,7 +19,7 @@ export type BookInfo = {
     publisher: string;
     publishedDate: string;
     pageCount: number;
-    averageRating?: number;
+    averageRating: number;
     description?: string;
 }
 
