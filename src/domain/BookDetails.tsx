@@ -1,7 +1,8 @@
 import React from "react";
 import store from "../Store";
 import "./BookDetails.scss";
-import {ReactComponent as Star} from "../icons/star.svg";
+import Rating from "../components/Rating/Rating";
+import { ReactComponent as Star } from "../icons/star.svg";
 
 const BookDetails: React.FC = () => {
   const state = store.getState();
@@ -14,9 +15,7 @@ const BookDetails: React.FC = () => {
         <div className="bookImage">
           <div>
             <img className="image" src={imgLink} alt="bookImage" />
-            {[...Array(5)].map((e, i) => (
-              <Star className="star" key={i} />
-            ))}
+            <Rating />
             <p>My rating</p>
           </div>
         </div>
@@ -37,9 +36,7 @@ const BookDetails: React.FC = () => {
             })}
           </div>
           <div className="avgRating">
-            {[...Array(5)].map((e, i) => (
-              <Star className="star" key={i} />
-            ))}
+            <Rating />
             <p>Avarage rating</p>
           </div>
           <div
