@@ -43,7 +43,7 @@ export type SalesInfo = {
 
 export type CategoryBooks = {
     category: string;
-    bookList: BookType[];
+    bookList: any[];
 }
 
 export interface BookLoading {

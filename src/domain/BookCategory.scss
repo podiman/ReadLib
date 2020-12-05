@@ -1,0 +1,14 @@
+@import "../sass/base.scss";
+
+.categoryContent {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+}
+
+
+.bookCover {
+    width: 150px;
+    margin: 2rem;
+    box-shadow: 0 0 4px #8d8d8d;
+}

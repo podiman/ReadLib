@@ -2,14 +2,19 @@ import React from "react";
 import store from "../Store";
 import "./BookDetails.scss";
 import Rating from '@material-ui/lab/Rating';
+import {withRouter, RouteComponentProps} from 'react-router-dom';
 
-const BookDetails: React.FC = () => {
+
+const BookDetails: React.FC<RouteComponentProps<{bookId: string}>> = ({match}) => {
   const state = store.getState();
-  const imgLink = `https://books.google.com/books/content/images/frontcover/${state.books.Books?.id}?fife=w400-h600`;
-  //   const desc: string = state.books.Books?.bookInfo.description!;
+
+  const {params} = match;
+  const {bookId} = params;
+  const imgLink = `https://books.google.com/books/content/images/frontcover/${bookId}?fife=w400-h600`;
+
   return (
-    <div className="bookDetails">
-      <div className="bookInformation">
+    <div className="page">
+      <div className="pageBody">
         <div className="bookImage">
           <div>
             <img className="image" src={imgLink} alt="bookImage" />

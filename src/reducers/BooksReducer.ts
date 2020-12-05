@@ -14,17 +14,20 @@ const defaultState: DefaultStateI = {
 const booksReducer = (state: DefaultStateI = defaultState, action: BookActionTypes.BookDispatchTypes) : DefaultStateI => {
     switch(action.type) {
         case BookActionTypes.BOOK_LOADING:
+            console.log("Book Loading");
             return {
                 ...state,
                 loading: true
             }
         case BookActionTypes.BOOK_SEARCH_SUCCESS:
+            console.log(`Reducer: ${action.payload.bookInfo}`);
             return {
                 ...state,
                 loading: false,
                 Books: action.payload
             }
         case BookActionTypes.BOOK_SEARCH_FAIL:
+            console.log("Book search failed");
             return {
                 ...state,
                 loading: false
@@ -34,7 +37,11 @@ const booksReducer = (state: DefaultStateI = defaultState, action: BookActionTyp
                 return {
                     ...state,
                     loading: false,
-                    categoryBooks: state.categoryBooks.map(item => item.category === action.payload.category ? { ...item, bookList: action.payload.bookList} : item)
+                    categoryBooks: state.categoryBooks.map(item => item.category === action.payload.category ? { 
+                        ...item,
+                        category: action.payload.category,
+                        bookList: action.payload.bookList
+                    } : item)
                 }
             }
             return {

@@ -12,8 +12,8 @@ export const GetBooks = (book: string) => async (dispatch: Dispatch<BookActionTy
         });
 
         // const res = await  axios.get(`https://www.googleapis.com/books/v1/volumes?q=${book}+inauthor:keyes&key=${api_key}`);
-        const getOneBook = await axios.get(`https://www.googleapis.com/books/v1/volumes/${volumeId}?key=${api_key}`);
-
+        const getOneBook = await axios.get(`https://www.googleapis.com/books/v1/volumes/${book}?key=${api_key}`);
+        console.log(getOneBook.data);
         dispatch({
             type: BookActionTypes.BOOK_SEARCH_SUCCESS,
             payload: {
@@ -31,21 +31,22 @@ export const GetBooks = (book: string) => async (dispatch: Dispatch<BookActionTy
                 ISBNInfo: getOneBook.data.volumeInfo.industryIdentifiers,
                 imgURL: getOneBook.data.volumeInfo.imageLinks.thumbnail,
                 salesInfo: {
-                    country: getOneBook.data.saleInfo.country,
-                    saleability: getOneBook.data.saleInfo.saleability,
+                    country: getOneBook.data.saleInfo?.country,
+                    saleability: getOneBook.data.saleInfo?.saleability,
                     listPrice: {
-                        amount: getOneBook.data.saleInfo.listPrice.amount,
-                        currency: getOneBook.data.saleInfo.listPrice.currencyCode
+                        amount: getOneBook.data.saleInfo?.listPrice?.amount,
+                        currency: getOneBook.data.saleInfo?.listPrice?.currencyCode
                     },
-                    buyLink: getOneBook.data.saleInfo.buyLink,
+                    buyLink: getOneBook.data.saleInfo?.buyLink,
                     retailPrice: {
-                        amount: getOneBook.data.saleInfo.retailPrice.amount,
-                        currency: getOneBook.data.saleInfo.retailPrice.currencyCode
+                        amount: getOneBook.data.saleInfo?.retailPrice?.amount,
+                        currency: getOneBook.data.saleInfo?.retailPrice?.currencyCode
                     },
                 }
             }
         })
     } catch (e) {
+        console.log(e);
         dispatch({
             type: BookActionTypes.BOOK_SEARCH_FAIL
         })
@@ -57,7 +58,7 @@ export const BooksOfSubject = (subject: string) => async (dispatch: Dispatch<Boo
         dispatch({
             type: BookActionTypes.BOOK_LOADING
         });
-        const res = await  axios.get(`https://www.googleapis.com/books/v1/volumes?q=${subject}:romance&orderBy=newest&key=${api_key}`);
+        const res = await  axios.get(`https://www.googleapis.com/books/v1/volumes?q=subject:${subject}&orderBy=newest&key=${api_key}`);
         dispatch({
             type: BookActionTypes.BOOK_CATEGORY_SUCCESS,
             payload: {

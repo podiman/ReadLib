@@ -13,3 +13,26 @@ html, body {
 .App {
   min-height: 100vh;
 }
+
+.page{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-grey-200);
+}
+
+.pageBody {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: inherit;
+  align-self: center;
+}
+
+.title {
+  font-size: 3rem;
+  line-height: 4rem;
+  color: var(--color-info-400);
+  font-weight: 600;
+  text-transform: capitalize;
+}
