@@ -3,44 +3,41 @@ import * as BookActionTypes from './BookActionTypes';
 import axios from 'axios';
 
 const api_key = `${process.env.REACT_APP_BOOKS_API_KEY}`;
-const volumeId = "zyTCAlFPjgYC";
 
-export const GetBooks = (book: string) => async (dispatch: Dispatch<BookActionTypes.BookDispatchTypes>) => {
+export const GetBookInformation = (book: string) => async (dispatch: Dispatch<BookActionTypes.BookDispatchTypes>) => {
     try {
         dispatch({
             type: BookActionTypes.BOOK_LOADING
         });
 
-        // const res = await  axios.get(`https://www.googleapis.com/books/v1/volumes?q=${book}+inauthor:keyes&key=${api_key}`);
-        const getOneBook = await axios.get(`https://www.googleapis.com/books/v1/volumes/${book}?key=${api_key}`);
-        console.log(getOneBook.data);
+        const bookInformation = await axios.get(`https://www.googleapis.com/books/v1/volumes/${book}?key=${api_key}`);
         dispatch({
             type: BookActionTypes.BOOK_SEARCH_SUCCESS,
             payload: {
-                id: getOneBook.data.id,
+                id: bookInformation.data.id,
                 bookInfo: {
-                    authors: getOneBook.data.volumeInfo.authors,
-                    averageRating: getOneBook.data.volumeInfo.averageRating,
-                    pageCount: getOneBook.data.volumeInfo.pageCount,
-                    publishedDate: getOneBook.data.volumeInfo.publishedDate,
-                    publisher: getOneBook.data.volumeInfo.publisher,
-                    subtitle: getOneBook.data.volumeInfo.subtitle,
-                    title: getOneBook.data.volumeInfo.title,
-                    description: getOneBook.data.volumeInfo.description
+                    authors: bookInformation.data.volumeInfo.authors,
+                    averageRating: bookInformation.data.volumeInfo.averageRating,
+                    pageCount: bookInformation.data.volumeInfo.pageCount,
+                    publishedDate: bookInformation.data.volumeInfo.publishedDate,
+                    publisher: bookInformation.data.volumeInfo.publisher,
+                    subtitle: bookInformation.data.volumeInfo.subtitle,
+                    title: bookInformation.data.volumeInfo.title,
+                    description: bookInformation.data.volumeInfo.description
                 },
-                ISBNInfo: getOneBook.data.volumeInfo.industryIdentifiers,
-                imgURL: getOneBook.data.volumeInfo.imageLinks.thumbnail,
+                ISBNInfo: bookInformation.data.volumeInfo.industryIdentifiers,
+                imgURL: bookInformation.data.volumeInfo.imageLinks.thumbnail,
                 salesInfo: {
-                    country: getOneBook.data.saleInfo?.country,
-                    saleability: getOneBook.data.saleInfo?.saleability,
+                    country: bookInformation.data.saleInfo?.country,
+                    saleability: bookInformation.data.saleInfo?.saleability,
                     listPrice: {
-                        amount: getOneBook.data.saleInfo?.listPrice?.amount,
-                        currency: getOneBook.data.saleInfo?.listPrice?.currencyCode
+                        amount: bookInformation.data.saleInfo?.listPrice?.amount,
+                        currency: bookInformation.data.saleInfo?.listPrice?.currencyCode
                     },
-                    buyLink: getOneBook.data.saleInfo?.buyLink,
+                    buyLink: bookInformation.data.saleInfo?.buyLink,
                     retailPrice: {
-                        amount: getOneBook.data.saleInfo?.retailPrice?.amount,
-                        currency: getOneBook.data.saleInfo?.retailPrice?.currencyCode
+                        amount: bookInformation.data.saleInfo?.retailPrice?.amount,
+                        currency: bookInformation.data.saleInfo?.retailPrice?.currencyCode
                     },
                 }
             }
@@ -67,6 +64,7 @@ export const BooksOfSubject = (subject: string) => async (dispatch: Dispatch<Boo
             }
         })
     } catch (e) {
+        console.log(e);
         dispatch({
             type: BookActionTypes.BOOK_CATEGORY_FAIL
         })

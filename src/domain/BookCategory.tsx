@@ -3,7 +3,7 @@ import booksReducer from "../reducers/BooksReducer";
 import { Link } from "react-router-dom";
 import store from "../Store";
 import { useDispatch } from "react-redux";
-import { GetBooks } from "../actions/BookActions";
+import { GetBookInformation } from "../actions/BookActions";
 import "./BookCategory.scss";
 
 const BookCategory: React.FC = () => {
@@ -11,7 +11,7 @@ const BookCategory: React.FC = () => {
   const dispatch = useDispatch();
 
   const getBookInfo = (bookId: string) => {
-    dispatch(GetBooks(bookId));
+    dispatch(GetBookInformation(bookId));
   };
 
   return (

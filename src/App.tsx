@@ -7,7 +7,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import "./sass/base.scss";
 import ScrollTop from "./components/ScrollTop/ScrollTop";
 import { useDispatch, useSelector } from "react-redux";
-import { GetBooks, BooksOfSubject } from "./actions/BookActions";
+import { BooksOfSubject } from "./actions/BookActions";
 import { RootStore } from "./Store";
 import BookDetails from './domain/BookDetails';
 import BookCategory from './domain/BookCategory';
@@ -19,9 +19,8 @@ function App() {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setbookName(event.target.value);
   const handleSubmit = () => dispatch(BooksOfSubject(bookName));
-  // const handleSubmit = () => dispatch(GetBooks(bookName));
 
-  // console.log("Book state:", bookState);
+  console.log("Book state:", bookState);
   return (
       <BrowserRouter>
         <ScrollTop />
