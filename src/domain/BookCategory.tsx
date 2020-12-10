@@ -7,6 +7,7 @@ import { RouteComponentProps } from "react-router-dom";
 import { BooksOfSubject } from "../actions/BookActions";
 import "./BookCategory.scss";
 import { CategoryBooks } from "../actions/BookActionTypes";
+import Loading from "../components/Loading/Loading";
 
 const BookCategory: React.FC<RouteComponentProps<{ categoryId: string }>> = ({
   match,
@@ -28,7 +29,7 @@ const BookCategory: React.FC<RouteComponentProps<{ categoryId: string }>> = ({
 
   return (
     <>
-      {/* {!state.books.loading && (
+      {state.books.loading ? <Loading /> : (
         <div className="page">
           <div className="pageBody">
             <div className="categoryContent">
@@ -52,8 +53,8 @@ const BookCategory: React.FC<RouteComponentProps<{ categoryId: string }>> = ({
             </div>
           </div>
         </div>
-      )} */}
-      <div className="page">
+      )}
+      {/* <div className="page">
           <div className="pageBody">
             <div className="categoryContent">
               <div>
@@ -75,7 +76,7 @@ const BookCategory: React.FC<RouteComponentProps<{ categoryId: string }>> = ({
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
     </>
   );
 };
