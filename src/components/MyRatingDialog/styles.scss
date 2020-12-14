@@ -1,0 +1,48 @@
+@import '../../sass/base.scss';
+
+.bookcover {
+    width: 10rem;
+    box-shadow: 0 0 4px #8d8d8d;
+}
+
+.form-header {
+    display: flex;
+    flex-direction: row;
+    > * {
+        margin-right: 1rem;
+    }
+    .form-title {
+        display: flex;
+        flex-direction: column;
+        h1 {
+            font-size: 2rem;
+        }
+    }
+    .close-button {
+        position: absolute !important;
+        top: 0;
+        right: 0;
+        &:hover {
+            color: black;
+        }
+    }
+    .authors {
+        display: flex;
+        flex-direction: row;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        color: var(--color-info-400);
+        p {
+          &:last-child span {
+            display: none;
+          }
+        }
+      }
+}
+
+.user-review {
+    &:focus {
+        color: var(--color-primary-400);
+    }
+}
+

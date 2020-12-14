@@ -54,29 +54,6 @@ const BookCategory: React.FC<RouteComponentProps<{ categoryId: string }>> = ({
           </div>
         </div>
       )}
-      {/* <div className="page">
-          <div className="pageBody">
-            <div className="categoryContent">
-              <div>
-                <h1 className="title">{BooksOfThisCategory?.category} Books</h1>
-                {BooksOfThisCategory?.bookList.map((book) => {
-                  const imgurl = `https://books.google.com/books/content/images/frontcover/${book.id}?fife=w400-h600`;
-                  const bookId = book.id;
-                  const path = `/book/${book.id}`;
-                  return (
-                    <Link
-                      key={bookId}
-                      to={path}
-                      onClick={() => getBookInfo(bookId)}
-                    >
-                      <img className="bookCover" src={imgurl} alt={bookId} />
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div> */}
     </>
   );
 };

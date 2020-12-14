@@ -9,6 +9,7 @@ button {
     cursor: pointer;
     &:hover {
         background-color: var(--color-info-400);
+        color: var(--color-grey-200);
     }
 }
 

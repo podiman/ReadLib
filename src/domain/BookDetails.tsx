@@ -2,7 +2,8 @@ import React from "react";
 import store from "../Store";
 import "./BookDetails.scss";
 import Rating from '@material-ui/lab/Rating';
-import {withRouter, RouteComponentProps} from 'react-router-dom';
+import { RouteComponentProps } from 'react-router-dom';
+import MyRatingDialog from '../components/MyRatingDialog/MyRatingDialog';
 
 
 const BookDetails: React.FC<RouteComponentProps<{bookId: string}>> = ({match}) => {
@@ -11,6 +12,7 @@ const BookDetails: React.FC<RouteComponentProps<{bookId: string}>> = ({match}) =
   const {params} = match;
   const {bookId} = params;
   const imgLink = `https://books.google.com/books/content/images/frontcover/${bookId}?fife=w400-h600`;
+  const bookInfo = state.books.Books?.bookInfo;
 
   return (
     <div className="page">
@@ -20,6 +22,7 @@ const BookDetails: React.FC<RouteComponentProps<{bookId: string}>> = ({match}) =
             <img className="image" src={imgLink} alt="bookImage" />
             <Rating name="half-rating" size="large" color="#a78f69" defaultValue={2.5} precision={0.5} />
             <p>My rating</p>
+            <MyRatingDialog bookId={bookId} bookInfo={bookInfo}/>
           </div>
         </div>
         <div className="detailedInfo">

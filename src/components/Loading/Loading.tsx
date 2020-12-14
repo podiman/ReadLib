@@ -1,15 +1,17 @@
-import React from 'react';
-import Skeleton from '@material-ui/lab/Skeleton';
+import React from "react";
+import Skeleton from "@material-ui/lab/Skeleton";
+import "./styles.scss";
 
 const Loading: React.FC = () => {
-    return (
-        <div className="page">
-            <div className="pageBody">
-                <Skeleton />
-                <Skeleton animation="wave" variant="rect" width={210} height={200} />
-            </div>
+  return (
+    <div className="page">
+      <div className="pageBody">
+        <div className="loading-page">
+          <div className="loader"></div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Loading;
